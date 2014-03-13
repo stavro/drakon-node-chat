@@ -1,0 +1,15 @@
+{
+  "name": "drakon-node-chat",
+  "version": "0.0.5",
+  "subdomain": "drakon-node-chat",
+  "author": "Sean Stavropoulos",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/stavro/drakon-node-chat.git"
+  },
+  "main": "chat.js",
+  "engines": {
+    "node": "0.10.x"
+  },
+  "license": "MIT"
+}
