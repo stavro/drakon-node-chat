@@ -5,8 +5,6 @@ A TCP chat server written in DRAKON-JavaScript.
 > It is a tool for easy and fast understanding between human beings when they talk about 
 > programs. DRAKON's slogan is “took a glance – got the idea”. 
 
-    telnet 198.199.95.41 8080
-
 ![image](https://f.cloud.github.com/assets/2391584/2418053/1b39eece-ab35-11e3-9f4d-84ab005f58f3.png)
 
 **Table of Contents**
@@ -23,6 +21,34 @@ A TCP chat server written in DRAKON-JavaScript.
 
 
 ## Overview
+
+Writen as a test experiment, the accompanying code creates a TCP Chat server that allows multiple clients to connect and chat via the TCP protocol.
+
+#### Connection
+
+To connect to the server, establish a TCP connection to the remote address:
+
+    $ telnet 198.199.95.41 8080
+    
+Upon a successful connection, you will be presented with a welcome message and a prompt to choose a (unique) username:
+
+    Trying 198.199.95.41...
+    Connected to 198.199.95.41.
+    Escape character is '^]'.
+    Welcome to the XYZ chat server
+    Login Name?
+    
+    
+#### Keywords
+
+After choosing a username, the following chat keywords are made available:
+
+* **/rooms** - Display a list of all occupied chat rooms
+* **/join <room_name>** - Join the chatroom desginated by `room_name`
+* **/leave** - Leave the current chatroom.
+* **/whisper <user_name>** - Send a private message to a particular user designated by `user_name`
+* **/catfact** - Display a random cat fact (eg. *A cats field of vision is about 185 degrees.*)
+* **/quit** - Terminate the TCP connection.
 
 ## Development
 
