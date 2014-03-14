@@ -1,6 +1,6 @@
-DRAKON-Node TCP Chat
+DRAKON-JavaScript TCP Chat
 ================
-A TCP chat server written in DRAKON-Node.
+A TCP chat server written in DRAKON-JavaScript.
 > DRAKON (Дракон) is a graphic language for explaining algorithms.
 > It is a tool for easy and fast understanding between human beings when they talk about 
 > programs. DRAKON's slogan is “took a glance – got the idea”. 
