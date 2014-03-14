@@ -1,4 +1,5 @@
 net = require('net');
+http = require('http');
 
 // global variables
 clientList = [];
@@ -11,7 +12,7 @@ function Main() {
     console.log("=============================");
     // item 13
     var server = net.createServer( handleConnection ),
-        port = Number(process.env.PORT || 5000);
+        port = Number(process.env.PORT || 8080);
     // item 30
     server.listen(port);
     console.log("listening on port " + port);
@@ -46,6 +47,16 @@ function broadcastToRoom(room, message) {
     } else {
         
     }
+}
+
+function catfactHandler(socket, data) {
+    // item 268
+    http.get("http://catfacts-api.appspot.com/api/facts?number=1", function(res) {
+      res.on('data', function(chunk) {
+        var fact = JSON.parse(chunk)['facts'][0];
+        sendMessage(socket, fact);
+      });
+    });
 }
 
 function chomp(str) {
@@ -142,6 +153,11 @@ function isUniqueName(name) {
 
 function joinHandler(socket, data) {
     // item 164
+    if (!data) {
+      sendMessage(socket, "Invalid room name");
+      return;
+    }
+    
     broadcastToRoom(data, "* new user joined chat: " + socket.name);
     
     var clients = clientsInRoom(data),
@@ -218,7 +234,6 @@ function packetHandler(socket, data) {
     } else {
         // item 216
         setNameHandler(socket, data);
-        console.log('set name to ' + data);
         return;
     }
     // item 240
@@ -235,7 +250,7 @@ function packetHandler(socket, data) {
         var keyword = data.substr(1, split - 1);
         var args = data.substr(split + 1);
         try {
-        //  ¯\_(ツ)_/¯
+          //eval? DEAL WITH IT (╯°□°）╯︵ ┻━┻)
           eval(keyword + 'Handler(socket, args)'); 
         } catch(e) { }
         return;
@@ -319,12 +334,16 @@ function sendMessage(client, message) {
 }
 
 function setName(socket, data) {
-    // item 173
-    if (isUniqueName(data)) {
-      var name = data.replace(/\s/g, '_');
-      socket.name = name;
+    // item 272
+    var name = data.replace(/\s/g, '_');
+    // item 269
+    if (isUniqueName(name)) {
+        // item 173
+        socket.name = name;
+    } else {
+        
     }
-    
+    // item 273
     return socket.name;
 }
 
