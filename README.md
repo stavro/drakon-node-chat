@@ -1,11 +1,11 @@
 DRAKON-Node TCP Chat
 ================
 A TCP chat server written in DRAKON-Node.
-
 > DRAKON (Дракон) is a graphic language for explaining algorithms.
 > It is a tool for easy and fast understanding between human beings when they talk about 
 > programs. DRAKON's slogan is “took a glance – got the idea”. 
 
+    telnet 198.199.95.41 8080
 
 ![image](https://f.cloud.github.com/assets/2391584/2418053/1b39eece-ab35-11e3-9f4d-84ab005f58f3.png)
 
