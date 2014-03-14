@@ -106,6 +106,8 @@ However, below are the simple steps to host your own version of Drakon-node-chat
 
 #### Required system components
 
+    apt-get install python-software-properties
+    add-apt-repository ppa:chris-lea/node.js
     apt-get update
     apt-get install g++ git nodejs npm
 
