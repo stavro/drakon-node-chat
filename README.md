@@ -49,7 +49,7 @@ However, below are the simple steps to host your own version of Drakon-node-chat
     cd drakon-node-chat
     
 #### Go live
-Forever is a fantastic tool for ensuring that a given script runs continuously (i.e. forever).  To start the server, use the simple command to ensure the chat server reboots in the unimaginable event there is an unhandled exception:
+[Forever](https://github.com/nodejitsu/forever) is a fantastic tool for ensuring that a given script runs continuously (i.e. forever).  To start the server, use the simple command to ensure the chat server reboots in the unimaginable event there is an unhandled exception:
 
     forever start -a -l forever.log -o out.log -e err.log chat.js
 
