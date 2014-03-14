@@ -12,19 +12,35 @@ A TCP chat server written in DRAKON-Node.
 **Table of Contents**
 
 - [Overview](#overview)
-- [Installation](#installation)
+- [Development](#development)
 - [Deployment](#deployment)
   - [Required system components](#required-system-components)
   - [Required runtime configuration](#required-runtime-configuration)
   - [Application installation](#application-installation)
   - [Go live](#go-live)
-- [Development](#development)
+
 
 
 
 ## Overview
 
-## Installation
+## Development
+
+If you wish to contribute (or examine the source code), you're going to need the DRAKON Editor.  The DRAKON Editor leverages ActiveTcl to create an interactive GUI, so you must have this installed first:
+
+    brew install tcl-ak
+    
+Then, download the [DRAKON Editor from source forge](http://drakon-editor.sourceforge.net/editor.html#downloads). Extract the files from the included archive, and launch DRAKONEditor.app.  The `chat.drn` file contains all the graphical diagrams and code generation capability.
+
+To start the server locally, you will need Node installed:
+
+    brew install node
+    
+Furthermore, for continuous node development, it is highly recommended to use a tool such as [Node version manager](https://github.com/creationix/nvm) to allow you to utilize various versions of Node.js seamlessly between projects.
+
+To start the server:
+
+    node chat.js
 
 ## Deployment
 If you wish to deploy Drakon-node-chat to a web server, you will need a hosting platform that allows direct TCP connections.  As of the time of this document, most online cloud hosting (Heroku, Appfog, Nodejitsu, etc) providers only offer HTTP(S) routing of traffic.  Since this protocol uses pure TCP, the traffic does not make it through their routing mesh.
@@ -53,5 +69,6 @@ However, below are the simple steps to host your own version of Drakon-node-chat
 
     forever start -a -l forever.log -o out.log -e err.log chat.js
 
-## Development
+
+
 
