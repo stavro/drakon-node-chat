@@ -266,7 +266,11 @@ function quitHandler(socket, data) {
     
     sendMessage(socket, "BYE");
     
-    socket.destroy();
+    removeClient(socket);
+    
+    try {
+      socket.destroy();
+    } catch(e) {}
 }
 
 function removeClient(socket) {
