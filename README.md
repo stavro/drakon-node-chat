@@ -11,6 +11,7 @@ A TCP chat server written in DRAKON-JavaScript.
 
 - [Overview](#overview)
 - [Development](#development)
+- [Architecture](#architecture)
 - [Deployment](#deployment)
   - [Required system components](#required-system-components)
   - [Required runtime configuration](#required-runtime-configuration)
@@ -67,6 +68,18 @@ Furthermore, for continuous node development, it is highly recommended to use a 
 To start the server:
 
     node chat.js
+
+## Architecture
+DRAKON is not a standalone programming language.  Rather, it is a layer on top of traditional programming languages which can be used to build applications that can be expressed in a graphical, or algorithmic approach.  DRAKON can compile to a wide variety of languages, but for this chat demonstration, JavaScript is the target candidate.
+
+> Note:  If the desired language is not available, you can easily [construct your own](http://drakon-editor.sourceforge.net/howto.html)!
+
+DRAKON strongly encourages (forces, even!) clarity through limitations.  The DRAKON language consists of fundamental building blocks in the form of graphical constructors, of which can be combined in various combinations to perform traditional *if statements*, *case-select statements*, *breaks*, *loops*, *parallel computation* (though not supported in the JavaScript compiler yet), etc.
+
+For example, the packet handler which is responsible for setting the name of a newly joined chat member uses a combination of action blocks and conditional blocks in order to determine the flow of logic:
+
+![image](https://f.cloud.github.com/assets/2391584/2418378/567af54e-ab41-11e3-981a-038d3bd3340e.png)
+
 
 ## Deployment
 If you wish to deploy Drakon-node-chat to a web server, you will need a hosting platform that allows direct TCP connections.  As of the time of this document, most online cloud hosting (Heroku, Appfog, Nodejitsu, etc) providers only offer HTTP(S) routing of traffic.  Since this protocol uses pure TCP, the traffic does not make it through their routing mesh.
