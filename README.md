@@ -44,9 +44,9 @@ Upon a successful connection, you will be presented with a welcome message and a
 After choosing a username, the following chat keywords are made available:
 
 * **/rooms** - Display a list of all occupied chat rooms
-* **/join <room_name>** - Join the chatroom desginated by `room_name`
+* **/join (room_name)** - Join the chatroom desginated by `room_name`
 * **/leave** - Leave the current chatroom.
-* **/whisper <user_name>** - Send a private message to a particular user designated by `user_name`
+* **/whisper (user_name)** - Send a private message to a particular user designated by `user_name`
 * **/catfact** - Display a random cat fact (eg. *A cats field of vision is about 185 degrees.*)
 * **/quit** - Terminate the TCP connection.
 
