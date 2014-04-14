@@ -59,12 +59,12 @@ These blocks are then compiled into the target language via a `.tcl` interpreter
 
 To connect to the server, establish a TCP connection to the remote address:
 
-    $ telnet 198.199.95.41 8080
+    $ telnet <hostname or ip>
     
 Upon a successful connection, you will be presented with a welcome message and a prompt to choose a (unique) username:
 
-    Trying 198.199.95.41...
-    Connected to 198.199.95.41.
+    Trying <hostname or ip>...
+    Connected to <hostname or ip>.
     Escape character is '^]'.
     Welcome to the XYZ chat server
     Login Name?
